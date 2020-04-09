@@ -51,5 +51,27 @@ public class OrderController
        //orderRepository.save(order);
        return "welcome";
    }
+ 
+/*   
+   @PostMapping("/restaurant/order")
+ 	public String createOrder(
+ 			@RequestParam("restaurantName") String restaurantName, 
+ 			@RequestParam("cuisine") String cusine, 
+ 			@RequestParam("price") String price,
+ 			@RequestParm("items") String items, 
+ 			Model model) {
+ 		
+ 		model.addAttribute("restaurantName", restaurantName);
+ 		model.addAttribute("cuisine", cuisine);
+ 		model.addAttribute("price", price);
+ 		model.addAttribute("items", items);
+ 		OrderService.requestReservation(restaurantName, cuisine, price, items);
+ 		return "request_reservation";
+ 	}
+
+
+*/
+     
+ }
+
    
-}

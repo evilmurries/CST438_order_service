@@ -15,12 +15,7 @@ public class Order {
    private String items;
    
    
-//   // transient attributes are not stored in database. 
-//   @Transient
-//   private double toCityTemp;
-//   @Transient
-//   private String toCityWeatherCondition;
-   
+
    @Transient
    private String message;
    
