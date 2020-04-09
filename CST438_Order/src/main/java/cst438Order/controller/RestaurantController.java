@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cst438Order.domain.Restaurant;
+import cst438Order.domain.Order;
 import cst438Order.service.OrderService;
 
 

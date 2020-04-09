@@ -4,14 +4,14 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface RestaurantRepository extends CrudRepository<Restaurant, Long> {
+public interface RestaurantRepository extends CrudRepository<Order, Long> {
 
-   Restaurant findById(int id);
+   Order findById(int id);
    
-   List<Restaurant> findByRestaurantName(String restaurantName);
+   List<Order> findByRestaurantName(String restaurantName);
    
 
    @Query(value="select * from restaurant order by id desc", nativeQuery=true)
-   public List<Restaurant> findAllRestaurants();
+   public List<Order> findAllRestaurants();
    
 }

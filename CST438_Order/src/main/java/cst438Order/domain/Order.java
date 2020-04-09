@@ -3,7 +3,7 @@ package cst438Order.domain;
 import javax.persistence.*;
 
 @Entity
-public class Restaurant {
+public class Order {
    
    @Id
    @GeneratedValue
@@ -12,6 +12,7 @@ public class Restaurant {
    private String restaurantName;
    private String cuisine;
    private String price;
+   private String items;
    
    
 //   // transient attributes are not stored in database. 
@@ -23,19 +24,20 @@ public class Restaurant {
    @Transient
    private String message;
    
-   public Restaurant() {
+   public Order() {
       
    }
   
-   public Restaurant(String name, String cuisineType, String price) {
+   public Order(String name, String cuisineType, String price, String items) {
       this.restaurantName = name;
       this.cuisine = cuisineType;
       this.price = price;
+      this.items = items;
    }
 
    @Override
    public String toString( ) {
-      return this.restaurantName + " " + this.cuisine + " " + this.price;
+      return this.restaurantName + " " + this.cuisine + " " + this.items+ " " + this.price;
    }
    
    
@@ -66,4 +68,12 @@ public class Restaurant {
 	      return this.price;
 	   }
    
+	   
+	   public void setItems(String items){
+		   this.items = items;
+	   }
+	   
+	   public String getItems(String items) {
+		   return this.items = items;
+	   }
 }
