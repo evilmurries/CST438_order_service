@@ -18,7 +18,7 @@ import cst438Order.service.OrderService;
 
 
 @RestController
-public class RestaurantController
+public class OrderController
 {
    @Autowired
    OrderService orderService;
