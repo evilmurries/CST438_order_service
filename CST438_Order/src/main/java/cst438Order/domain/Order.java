@@ -3,11 +3,11 @@ package cst438Order.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name="order")
 public class Order {
    
    @Id
-   @GeneratedValue
-   private int id;
+   private long id;
    
    private String restaurantName;
    private String cuisine;
@@ -25,10 +25,12 @@ public class Order {
    private String message;
    
    public Order() {
-      
+	   this(0, "IHOP", "Snacks", "2.99", "PeanutButter");
    }
   
-   public Order(String name, String cuisineType, String price, String items) {
+   public Order(long id, String name, String cuisineType, String price, String items) {
+	   super();
+	  this.id = id;
       this.restaurantName = name;
       this.cuisine = cuisineType;
       this.price = price;
