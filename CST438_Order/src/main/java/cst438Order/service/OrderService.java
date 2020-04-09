@@ -39,12 +39,12 @@ public class OrderService {
 	@Autowired
 	private FanoutExchange fanout;
 	
-	public void requestReservation( 
-            String name, 
+	public void requestOrder( 
+            String restaurantName, 
             String cuisine, 
             String price,
             String items) {
-	String msg  = "{\"Name\": \""+ name + 
+	String msg  = "{\"Name\": \""+ restaurantName + 
         "\" \"cuisine\": \""+cuisine+
         "\" \"price\": \""+price+
         "\" \"items\": \""+items+"\"}" ;
