@@ -44,7 +44,7 @@ public class Order {
 
    @Override
    public String toString( ) {
-      return this.restaurantName + " " + this.cuisine + " " + this.items+ " " + this.price;
+      return this.restaurantName + " " + this.cuisine + " " + this.price+ " " + this.items;
    }
    
    
