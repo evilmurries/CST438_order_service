@@ -25,17 +25,16 @@ public class Order {
    private String message;
    
    public Order() {
-	  restaurantName = "restaurantName";
-	  cuisine = "cuisine";
-	  price = "price";
-	  items = "items";
-			
+	  this(0,"restaurantName", "cuisine", "price" , "items");
+	 		
 	}
    
+	
+   
   
-   public Order(long id, String name, String cuisineType, String price, String items) {
+   public Order(int i, String name, String cuisineType, String price, String items) {
 	   super();
-	  this.id = id;
+	  this.id = i;
       this.restaurantName = name;
       this.cuisine = cuisineType;
       this.price = price;
