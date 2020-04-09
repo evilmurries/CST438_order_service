@@ -25,8 +25,13 @@ public class Order {
    private String message;
    
    public Order() {
-	   this(0, "IHOP", "Snacks", "2.99", "PeanutButter");
-   }
+	  restaurantName = "restaurantName";
+	  cuisine = "cuisine";
+	  price = "price";
+	  items = "items";
+			
+	}
+   
   
    public Order(long id, String name, String cuisineType, String price, String items) {
 	   super();
