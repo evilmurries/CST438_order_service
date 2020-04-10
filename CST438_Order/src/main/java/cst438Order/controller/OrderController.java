@@ -53,7 +53,7 @@ public class OrderController
    }
  
 /*   
-   @PostMapping("/restaurant/order")
+   @PostMapping("/order")
  	public String createOrder(
  			@RequestParam("restaurantName") String restaurantName, 
  			@RequestParam("cuisine") String cusine, 
