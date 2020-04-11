@@ -40,7 +40,7 @@ public class OrderController
    public String createOrder( Model model) {
        Order order = new Order();
        model.addAttribute("order", order);
-       return "request_reservation";
+       return "Order";
    }
    
    @PostMapping("/order")
@@ -50,7 +50,7 @@ public class OrderController
        } 
 
        //orderRepository.save(order);
-       return "welcome";
+       return "request_reservation";
    }
  
 /*   
