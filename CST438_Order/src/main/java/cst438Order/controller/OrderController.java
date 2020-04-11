@@ -21,7 +21,7 @@ import cst438Order.domain.Order;
 import cst438Order.service.OrderService;
 
 
-@RestController
+@Controller
 public class OrderController
 {
    @Autowired
