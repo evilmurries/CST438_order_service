@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Rest</title>
-</head>
+   <title>Restaurants</title>
+
 <body>
-<h1></h1>
+    <h2>Restaurant</h2>
+    <form action="#" th:action="@{/order}" method = "post">
+  
+    Restaurant Name: <input type="text" th:field="*{restaurantName}" /> <br/>
+        <!-- If validation fails, error is printed in this span -->
+        <span th:if="${#fields.hasErrors('restaurantName')}" th:errors="*{restaurantName}"> </span>  <br/>
+   
+        <input type="submit" value="Submit" />
+    </form>
 </body>
 </html>
