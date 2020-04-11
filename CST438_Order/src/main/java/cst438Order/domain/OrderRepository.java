@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrderRepository extends CrudRepository<Order, Long> {
-	//Country findByCode(String code);
    Order findById(int id);
    
    List<Order> findByRestaurantName(String restaurantName);

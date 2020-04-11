@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Order {
    
    @Id
+   @GeneratedValue
    private long id;
    
    private String restaurantName;
@@ -38,11 +39,9 @@ public class Order {
       return this.restaurantName + " " + this.cuisine + " " + this.price+ " " + this.items;
    }
    
-   
    public void setRestaurantName(String name) {
 	      this.restaurantName = name;
 	   }
-	   
 	   
 	   public String getRestaurantName() {
 	      return this.restaurantName;
@@ -52,7 +51,6 @@ public class Order {
 	      this.cuisine = name;
 	   }
 	   
-	   
 	   public String getCuisine() {
 	      return this.cuisine;
 	   }
@@ -61,12 +59,10 @@ public class Order {
 	      this.price = price;
 	   }
 	   
-	   
 	   public String getPrice() {
 	      return this.price;
 	   }
    
-	   
 	   public void setItems(String items){
 		   this.items = items;
 	   }
