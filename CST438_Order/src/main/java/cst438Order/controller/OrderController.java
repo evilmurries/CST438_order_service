@@ -40,13 +40,14 @@ public class OrderController
    public String createOrder( Model model) {
        Order order = new Order();
        model.addAttribute("order", order);
-       return "Order";
+       return "welcome";
    }
    
    @PostMapping("/order")
    public String processCityForm(@Valid Order order, BindingResult result, Model model) {
        if (result.hasErrors()) {
     	   //make page here
+    	   //call method to search 
        } 
 
        //orderRepository.save(order);
