@@ -40,7 +40,7 @@ public class OrderController
    public String createOrder( Model model) {
        Order order = new Order();
        model.addAttribute("order", order);
-       return "Order";
+       return "order";
    }
    
    @PostMapping("/order")
