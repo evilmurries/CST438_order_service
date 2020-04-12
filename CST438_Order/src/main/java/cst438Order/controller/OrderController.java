@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cst438Order.domain.Order;
 import cst438Order.domain.OrderRepository;
+import cst438Order.domain.RestaurantInfo;
 import cst438Order.service.OrderService;
 
 
@@ -32,13 +33,6 @@ public class OrderController
    @Autowired
    OrderRepository orderRepository;
    
-   /*
-   @GetMapping("/restaurant/{id}")
-   public ResponseEntity<Restaurant> findOrderById(@PathVariable("id") int id) {
-   }
-   */
-   
-   
    @GetMapping("/order")
    public String createOrder( Model model) {
        Order order = new Order();
@@ -47,12 +41,12 @@ public class OrderController
    }
    
    @PostMapping("/order")
-   public String processCityForm(@Valid Order order, BindingResult result, Model model) {
-       if (result.hasErrors()) {
-    	   return "welcome";
-       } 
-
-       orderRepository.save(order);
+   public String processCityForm(@RequestParam("city") String rName, Model model) {
+       RestaurantInfo r = orderService.getRestaurantByName(name);
+       if (r == null) {
+          return "welcome";
+       }
+       model.addAttribute("restaurant", r);
        return "order";
    }
  

@@ -7,10 +7,7 @@
     <h2>Search for Restaurant</h2>
     <form action="#" th:action="@{/order}" th:object="${order}" method = "post">
   
-    Restaurant Name: <input type="text" th:field="*{restaurantName}" /> <br/>
-        <!-- If validation fails, error is printed in this span -->
-        <span th:if="${#fields.hasErrors('restaurantName')}" th:errors="*{restaurantName}"> </span>  <br/>
-   
+    Restaurant Name: <input type="text" th:name="rName" /> <br/>
         <input type="submit" value="Submit" />
     </form>
 </body>

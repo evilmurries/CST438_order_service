@@ -5,15 +5,21 @@ import java.util.List;
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 import cst438Order.domain.Order;
 import cst438Order.domain.OrderRepository;
+import cst438Order.domain.RestaurantInfo;
 
 
 @Service
 public class OrderService {
 	
+   private RestTemplate restTemplate;
 	
 	@Autowired
 	private OrderRepository orderRepository;
@@ -53,5 +59,20 @@ public class OrderService {
          fanout.getName(), 
          "",   // routing key none.
          msg);
+	}
+	
+	
+	public RestaurantInfo getRestaurantByName(String restName) {
+	   String restUrl = "localhost:8080/restaurant/name/" + restName;
+	   RestaurantInfo r = new RestaurantInfo();
+	   ResponseEntity<JsonNode> response = restTemplate.getForEntity(restUrl, JsonNode.class);
+	   JsonNode json = response.getBody();
+	   String name = json.get("restaurantName").toString();
+	   String price = json.get("price").toString();
+	   String cuisine = json.get("cuisine").toString();
+	   r.setRestaurantName(name);
+	   r.setPrice(price);
+	   r.setCuisine(cuisine);
+	   return r;
 	}
 }
