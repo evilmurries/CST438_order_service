@@ -66,7 +66,9 @@ public class OrderService {
 	   String restUrl = "http://localhost:8090/restaurant/name/" + restName;
 	   System.out.println(restUrl);
 	   RestaurantInfo r = new RestaurantInfo();
+	   RestTemplate restTemplate = new RestTemplate();
 	   ResponseEntity<JsonNode> response = restTemplate.getForEntity(restUrl, JsonNode.class);
+	   System.out.println(response.toString());
 	   JsonNode json = response.getBody();
 	   String name = json.get("restaurantName").toString();
 	   String price = json.get("price").toString();
