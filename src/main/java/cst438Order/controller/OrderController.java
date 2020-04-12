@@ -41,7 +41,7 @@ public class OrderController
    }
    
    @PostMapping("/order")
-   public String processCityForm(@RequestParam("rName") String rName, Model model) {
+   public String processOrderForm(@RequestParam("rName") String rName, Model model) {
        RestaurantInfo r = orderService.getRestaurantByName(rName);
        if (r == null) {
           return "welcome";
