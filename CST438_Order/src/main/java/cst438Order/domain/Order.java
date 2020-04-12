@@ -3,8 +3,8 @@ package cst438Order.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="order")
-@SecondaryTable(name = "restaurant", pkJoinColumns = @PrimaryKeyJoinColumn(name = "restaurantName", referencedColumnName = "id"))
+@Table(name="orders")
+//@SecondaryTable(name = "restaurant", pkJoinColumns = @PrimaryKeyJoinColumn(name = "restaurantName", referencedColumnName = "id"))
 public class Order {
    
    @Id
@@ -22,7 +22,6 @@ public class Order {
    private String message;
    
    public Order() {
-	  this(0,"restaurantName", "cuisine", "price" , "items");
 	 		
 	}
    

@@ -53,7 +53,7 @@ public class OrderController
        } 
 
        orderRepository.save(order);
-       return "request_reservation";
+       return "order";
    }
  
      
