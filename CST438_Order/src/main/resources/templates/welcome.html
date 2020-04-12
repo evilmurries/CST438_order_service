@@ -4,8 +4,8 @@
    <title>Restaurants</title>
 
 <body>
-    <h2>Restaurant</h2>
-    <form action="#" th:action="@{/order}" method = "post">
+    <h2>Search for Restaurant</h2>
+    <form action="#" th:action="@{/order}" th:object="${order}" method = "post">
   
     Restaurant Name: <input type="text" th:field="*{restaurantName}" /> <br/>
         <!-- If validation fails, error is printed in this span -->

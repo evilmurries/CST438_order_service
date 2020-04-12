@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cst438Order.domain.Order;
+import cst438Order.domain.OrderRepository;
 import cst438Order.service.OrderService;
 
 
@@ -28,10 +29,12 @@ public class OrderController
    @Autowired
    OrderService orderService;
    
+   @Autowired
+   OrderRepository orderRepository;
+   
    /*
    @GetMapping("/restaurant/{id}")
    public ResponseEntity<Restaurant> findOrderById(@PathVariable("id") int id) {
-
    }
    */
    
@@ -46,15 +49,12 @@ public class OrderController
    @PostMapping("/order")
    public String processCityForm(@Valid Order order, BindingResult result, Model model) {
        if (result.hasErrors()) {
-    	   //make page here
-    	   //call method to search 
+    	   return "welcome";
        } 
 
-       //orderRepository.save(order);
-       return "request_reservation";
+       orderRepository.save(order);
+       return "order";
    }
  
      
  }
-
-   
