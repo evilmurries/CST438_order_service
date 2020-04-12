@@ -3,7 +3,7 @@ package cst438Order.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 @SecondaryTable(name = "restaurant", pkJoinColumns = @PrimaryKeyJoinColumn(name = "restaurantName", referencedColumnName = "id"))
 public class Order {
    
