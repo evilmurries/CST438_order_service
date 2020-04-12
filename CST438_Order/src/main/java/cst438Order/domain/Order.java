@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="order")
+@SecondaryTable(name = "restaurant", pkJoinColumns = @PrimaryKeyJoinColumn(name = "restaurantName", referencedColumnName = "id"))
 public class Order {
    
    @Id
@@ -25,7 +26,7 @@ public class Order {
 	 		
 	}
    
-   public Order(int i, String name, String cuisineType, String price, String items) {
+   public Order(long i, String name, String cuisineType, String price, String items) {
 	   super();
 	  this.id = i;
       this.restaurantName = name;
