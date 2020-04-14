@@ -13,6 +13,8 @@
  
    <form action="#" th:action="@{/order/confirmed}" method="post">
    <input type="hidden" th:value="*{restaurant.restaurantName}" th:name="orderName" />
+   <input type="hidden" th:value="*{restaurant.cuisine}" th:name="cuisine" />
+   <input type="hidden" th:value="*{restaurant.price}" th:name="price" />
    Order Items: <input type="text" th:name="items"/><br />
    <input type="submit" value="Submit" /> 
    </form>

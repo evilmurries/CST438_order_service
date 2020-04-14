@@ -51,12 +51,19 @@ public class OrderController
    }
    
    @PostMapping("/order/confirmed")
-	public String createReservation(@RequestParam("orderName") String oName, @RequestParam("items") String items, Model model) {
+	public String createReservation(
+			@RequestParam("orderName") String oName, 
+			@RequestParam("items") String items, 
+			@RequestParam("price") String price,
+			@RequestParam("cuisine") String cuisine,
+			Model model) {
 	   
 	   model.addAttribute("orderName", oName);
 	   model.addAttribute("items", items);
-		Order contOrder = orderService.getOrder(oName, items);
-		orderService.requestOrder(oName, contOrder.getCuisine(), contOrder.getPrice(), items);
+	   model.addAttribute("price", price);
+	   model.addAttribute("cuisine", cuisine);
+
+		orderService.requestOrder(oName, cuisine, price, items);
 		return "Order_Confirmed";
 	}
  
