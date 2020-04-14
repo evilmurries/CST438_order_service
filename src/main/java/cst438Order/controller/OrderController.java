@@ -49,6 +49,16 @@ public class OrderController
        model.addAttribute("restaurant", r);
        return "order";
    }
+   
+   @PostMapping("/order/confirmed")
+	public String createReservation(@RequestParam("orderName") String oName, @RequestParam("items") String items, Model model) {
+	   
+	   model.addAttribute("orderName", oName);
+	   model.addAttribute("items", items);
+		Order contOrder = orderService.getOrder(oName, items);
+		orderService.requestOrder(oName, contOrder.getCuisine(), contOrder.getPrice(), items);
+		return "Order_Confirmed";
+	}
  
      
  }

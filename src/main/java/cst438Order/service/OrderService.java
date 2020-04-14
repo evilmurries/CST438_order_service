@@ -24,12 +24,18 @@ public class OrderService {
 	@Autowired
 	private OrderRepository orderRepository;
 	
-	public Order getOrder(String restaurantName) {
+	public Order getOrder(String restaurantName, String items) {
 		
 		List<Order> getOrder = orderRepository.findByRestaurantName(restaurantName);
 		
 		if(!getOrder.isEmpty()) {
-			Order ofOrder = getOrder.get(0);
+			Order ofOrder = new Order();
+			RestaurantInfo res = getRestaurantByName(restaurantName);
+			
+			ofOrder.setRestaurantName(restaurantName);
+			ofOrder.setCuisine(res.getCuisine());
+			ofOrder.setPrice(res.getPrice());
+			ofOrder.setItems(items);
 			
 			return ofOrder;
 		}
