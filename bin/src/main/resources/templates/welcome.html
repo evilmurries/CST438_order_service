@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Restaurants</title>
+
+<body>
+    <h2>Search for Restaurant</h2>
+    <form action="#" th:action="@{/order}" th:object="${order}" method = "post">
+  
+    Restaurant Name: <input type="text" th:name="rName" /> <br/>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
