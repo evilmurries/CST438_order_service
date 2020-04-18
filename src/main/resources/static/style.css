@@ -1,8 +1,12 @@
 body {
   max-width: 500px;
   margin: auto;
-  background: white;
+  background: grey;
   padding: 10px;
+}
+h1 {
+  color: blue;
+  font-family: courier
 }
 
 h2 {
@@ -11,7 +15,7 @@ h2 {
   font-size: 200%;
 }
 p  {
-  color: black;
+  color: blue;
   font-family: courier;
-  font-size: 120%;
+  font-size: 400%;
 }

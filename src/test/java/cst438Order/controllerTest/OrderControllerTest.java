@@ -1,3 +1,4 @@
+/*
 package cst438Order.controllerTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -47,3 +48,19 @@ public class OrderControllerTest {
 
 
 }
+*/
+package cst438Order.controllerTest;
+
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import cst438Order.service.OrderService;
+
+
+@SpringBootTest
+public class OrderControllerTest
+{
+   @Mock
+   private OrderService orderService;
+}
+

@@ -12,9 +12,10 @@ import org.springframework.stereotype.Repository;
 public interface OrderRepository extends CrudRepository<Order, Long> {
    Order findById(int id);
    
-   List<Order> findByRestaurantName(String restaurantName);
+   Order findByRestaurantName(String restaurantName);
   
    @Query(value="select * from restaurant order by id desc", nativeQuery=true)
    public List<Order> findAllRestaurants();
+
    
 }

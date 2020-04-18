@@ -10,5 +10,11 @@
     
     <p th:inline="text">Your order [[${items}]] from [[${orderName}]] will be
     ready soon.</p>
-</body>
+    
+     <h2>Please Click to take our survey.<h2>
+
+ <form action="#" th:action="@{/order/survey}" method="post">
+ 
+   <input type="submit" value="Submit" th:name="level"/> 
+   </form>
 </html>

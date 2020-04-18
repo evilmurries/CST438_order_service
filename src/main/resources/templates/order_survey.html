@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+   <title>Survey</title>
+</head>
+<body>
+   <h2>Survey</h2>
+
+	<p1>How was your experience.</p1>
+	
+	
+	<form>
+      <input type="radio" th:value="luxury" th:name="level">
+      <label for="luxury">Good</label><br />
+      
+      <input type="radio" th:value="'very good'" th:name="level">
+      <label for="very good">Fair</label><br />
+      
+      <input type="radio" th:value="good" th:name="level">
+      <label for="good">Bad</label><br />
+      <input type="submit" value="Submit" /> 
+      
+      
+      
+    
+      
+  
+   </form>
+</body>
+</html>
+

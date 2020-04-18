@@ -7,13 +7,17 @@
    <h2>Restaurants</h2>
 
 
-   Restaurant ID: <span th:inline="text"> [[${restaurant.id}]]</span><br />
-   Restaurant Name: <span th:inline="text"> [[${restaurant.name}]]</span><br />
-   Restaurant Cuisine: <span th:inline="text"> [[${restaurant.cuisineType}]]</span><br />
+   Restaurant Name: <span th:inline="text"> [[${restaurant.restaurantName}]]</span><br />
+   Restaurant Cuisine: <span th:inline="text"> [[${restaurant.cuisine}]]</span><br />
    Total Price: <span th:inline="text"> [[${restaurant.price}]]</span><br />
  
-   
-   
+   <form action="#" th:action="@{/order/confirmed}" method="post">
+   <input type="hidden" th:value="*{restaurant.restaurantName}" th:name="orderName" />
+   <input type="hidden" th:value="*{restaurant.cuisine}" th:name="cuisine" />
+   <input type="hidden" th:value="*{restaurant.price}" th:name="price" />
+   Order Items: <input type="text" th:name="items"/><br />
+   <input type="submit" value="Submit" /> 
+   </form>
 
 </body>
 </html>

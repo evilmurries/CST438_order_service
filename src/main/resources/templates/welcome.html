@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="www.thymeleaf.org">
+
 <head>
    <title>Restaurants</title>
 
 <body>
-    <h2>Search for Restaurant</h2>
+    <h1>Search for Restaurant</h1>
     <form action="#" th:action="@{/order}" method = "post">
   
     Restaurant Name: <input type="text" name="rName" /> <br/>
@@ -12,3 +13,4 @@
     </form>
 </body>
 </html>
+
