@@ -143,23 +143,6 @@ public class OrderService {
 	@Autowired
 	private FanoutExchange fanout;
 	
-	public void requestOrder( 
-            String restaurantName, 
-            String cuisine, 
-            String price,
-            String items
-           ) {
-	String msg  = "{\"Name\": \""+ restaurantName + 
-        "\" \"cuisine\": \""+cuisine+
-        "\" \"price\": \""+price+
-        "\" \"items\": \""+items+"\"}" ;
-	System.out.println("Sending message:"+msg);
-	rabbitTemplate.convertSendAndReceive(
-         fanout.getName(), 
-         "",   // routing key none.
-         msg);
-	}
-	
 	public void requestSurvey( 
             String level) {
 	String msg  = "{\"level\": \""+level+"\"}" ;
@@ -169,6 +152,34 @@ public class OrderService {
          "",   // routing key none.
          msg);
 	}
+	
+	public void requestOrder( 
+            String restaurantName, 
+            String cuisine, 
+            String price,
+            String item1,
+            String item2,
+            String item3,
+            String item1Count,
+            String item2Count,
+            String item3Count) {
+	String msg  = "{\"Name\": \""+ restaurantName + 
+        "\" \"cuisine\": \""+cuisine+
+        "\" \"price\": \""+price+
+        "\" \"item1\": \""+item1+
+        "\" \"item2\": \""+item2+
+        "\" \"item3\": \""+item3+
+        "\" \"item1Count\": \"" +item1Count+
+        "\" \"item2Count\": \"" +item2Count+
+        "\" \"item3Count\": \"" +item3Count+
+        "\"}" ;
+	System.out.println("Sending message:"+msg);
+	rabbitTemplate.convertSendAndReceive(
+         fanout.getName(), 
+         "",   // routing key none.
+         msg);
+	}
+	
 	
 	public RestaurantInfo getRestaurantByName(String restName) {
 	   String restUrl = "http://localhost:8090/restaurant/name/" + restName;
@@ -181,9 +192,15 @@ public class OrderService {
 	   String name = json.get("restaurantName").toString();
 	   String price = json.get("price").toString();
 	   String cuisine = json.get("cuisine").toString();
+	   String foodItem1 = json.get("foodItem1").toString();
+	   String foodItem2 = json.get("foodItem2").toString();
+	   String foodItem3 = json.get("foodItem3").toString();
 	   r.setRestaurantName(name);
 	   r.setPrice(price);
 	   r.setCuisine(cuisine);
+	   r.setFoodItem1(foodItem1);
+	   r.setFoodItem2(foodItem2);
+	   r.setFoodItem3(foodItem3);
 	   return r;
 	}
 	

@@ -19,10 +19,12 @@ public class Order {
    private String cuisine;
    private String price;
    private String items;
-   
- 
-
-   
+   private String item1;
+   private String item2;
+   private String item3;
+   private String item1Count;
+   private String item2Count;
+   private String item3Count;
    
 
    @Transient
@@ -32,19 +34,24 @@ public class Order {
 	 		
 	}
    
-   public Order(int id, String name, String cuisineType, String price, String items, String message) {
-	   super();
-	  this.id = id;
+   public Order(int i, String name, String cuisineType, String price, String item1, String item2, String item3, String message)
+   {
+      super();
+      this.id = i;
       this.restaurantName = name;
       this.cuisine = cuisineType;
       this.price = price;
-      this.items = items;
-  	  this.message = message;
+      this.item1 = item1;
+      this.item2 = item2;
+      this.item3 = item3;
+      this.message = message;
    }
+   
 
    @Override
    public String toString( ) {
-      return this.restaurantName + " " + this.cuisine + " " + this.price+ " " + this.items + " " + this.message + " ";
+      return this.restaurantName + " " + this.cuisine + " " + this.price+ " " + this.item1
+    		  + this.item2 + this.item3 + " " + this.message + " ";
    }
    
    public void setRestaurantName(String name) {
@@ -95,6 +102,66 @@ public class Order {
 		public void setId(int id) {
 			this.id = id;
 		}
+		
+		public void setItem1(String item)
+		   {
+		      this.item1 = item;
+		   }
+
+		   public String getItem1()
+		   {
+		      return this.item1;
+		   }
+
+		   public void setItem2(String item)
+		   {
+		      this.item2 = item;
+		   }
+
+		   public String getItem2()
+		   {
+		      return this.item2;
+		   }
+
+		   public void setItem3(String item)
+		   {
+		      this.item3 = item;
+		   }
+
+		   public String getItem3()
+		   {
+		      return this.item3;
+		   }
+
+		   public void setItem1Count(String count)
+		   {
+		      this.item1Count = count;
+		   }
+
+		   public String getItem1Count()
+		   {
+		      return this.item1Count;
+		   }
+
+		   public void setItem2Count(String count)
+		   {
+		      this.item2Count = count;
+		   }
+
+		   public String getItem2Count()
+		   {
+		      return this.item2Count;
+		   }
+
+		   public void setItem3Count(String count)
+		   {
+		      this.item3Count = count;
+		   }
+
+		   public String getItem3Count()
+		   {
+		      return this.item3Count;
+		   }
 
 		@Override
 		public int hashCode() {
@@ -102,7 +169,9 @@ public class Order {
 			int result = 1;
 			result = prime * result + ((cuisine == null) ? 0 : cuisine.hashCode());
 			result = prime * result + id;
-			result = prime * result + ((items == null) ? 0 : items.hashCode());
+			result = prime * result + ((item1 == null) ? 0 : item1.hashCode());
+			result = prime * result + ((item2 == null) ? 0 : item2.hashCode());
+			result = prime * result + ((item3 == null) ? 0 : item3.hashCode());
 			result = prime * result + ((message == null) ? 0 : message.hashCode());
 			result = prime * result + ((price == null) ? 0 : price.hashCode());
 			result = prime * result + ((restaurantName == null) ? 0 : restaurantName.hashCode());
@@ -125,10 +194,20 @@ public class Order {
 				return false;
 			if (id != other.id)
 				return false;
-			if (items == null) {
-				if (other.items != null)
+			if (item1 == null) {
+				if (other.item1 != null)
 					return false;
-			} else if (!items.equals(other.items))
+			} else if (!item1.equals(other.item1))
+				return false;
+			if (item2 == null) {
+				if (other.item2 != null)
+					return false;
+			} else if (!item2.equals(other.item2))
+				return false;
+			if (item3 == null) {
+				if (other.item3 != null)
+					return false;
+			} else if (!item3.equals(other.item3))
 				return false;
 			/*if (message == null) {
 				if (other.message != null)

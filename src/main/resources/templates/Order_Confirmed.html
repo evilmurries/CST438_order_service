@@ -8,13 +8,21 @@
 <body>
     <h2>Order Confirmation.<h2>
     
-    <p th:inline="text">Your order [[${items}]] from [[${orderName}]] will be
+    <p th:inline="text">Your order from [[${orderName}]] will be
     ready soon.</p>
     
-     <h2>Please Click to take our survey.<h2>
+     <h2>Please Click to take our survey!<h2>
 
+	<p1>How was your experience?</p1>
  <form action="#" th:action="@{/order/survey}" method="post">
- 
+ 	  <input type="radio" th:value="luxury" th:name="level">
+      <label for="luxury">Good</label><br />
+      
+      <input type="radio" th:value="'very good'" th:name="level">
+      <label for="very good">Fair</label><br />
+      
+      <input type="radio" th:value="good" th:name="level">
+      <label for="good">Bad</label><br />
    <input type="submit" value="Submit" th:name="level"/> 
    </form>
 </html>

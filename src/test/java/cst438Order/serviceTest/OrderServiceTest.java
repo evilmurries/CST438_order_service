@@ -49,7 +49,7 @@ public class OrderServiceTest {
 	@Test
 	public void getOrderTest() {
 		Order testOrder =
-				new Order(1, "Mcdonalds", "American", "$", "4", "OK");
+				new Order(1, "Mcdonalds", "American", "$1", "1", "2", "3", "OK");
 	
 	//mocked OrderRepository will return testOrder when findById(1)is called
 	given(orderRepository.findById(1)).willReturn(testOrder);
@@ -66,7 +66,7 @@ public class OrderServiceTest {
 	public void deleteOrderTest() {
 		//given
 		Order testOrder =
-				new Order(1, "Mcdonalds", "American", "$", "4", "OK");
+				new Order(1, "Mcdonalds", "American", "$1", "1", "2", "3", "OK");
 		
 		//given (our mocked OrderRepository will return testOrder when findById(1)is called
 		given(orderRepository.findById(1)).willReturn(testOrder);
@@ -89,16 +89,16 @@ public class OrderServiceTest {
 		input.setItems("4");
 		
 		Order indb =
-		 new Order(0, "Mcdonalds", "American", "$", "4", "OK");
+		 new Order(0, "Mcdonalds", "American", "$1", "1", "2", "3", "OK");
 		
 		Order outdb = //same as indb except the Order id is updated
-				 new Order(10, "Mcdonalds", "American", "$", "4","OK");
+				 new Order(10, "Mcdonalds", "American", "$1", "1", "2", "3","OK");
 		
 		Order expected = 
-				 new Order(10, "Mcdonalds", "American", "$", "4","OK");
+				 new Order(10, "Mcdonalds", "American","$1", "1", "2", "3","OK");
 		
 		given(orderRepository.findByRestaurantName("Mcdonalds")).willReturn(
-				new Order(1, "Mcdonalds", "American", "$", "4","OK"));		
+				new Order(1, "Mcdonalds", "American","$1", "1", "2", "3","OK"));		
 		
 		given(orderRepository.save(indb)).willReturn(outdb);
 		
@@ -125,16 +125,16 @@ public class OrderServiceTest {
 		
 		
 		Order indb =
-		 new Order(0, "Mcdonalds", "American", "$", "4","OK");
+		 new Order(0, "Mcdonalds", "American", "$1", "1", "2", "3","OK");
 		
 		Order outdb = //same as indb except the Order id is updated
-				 new Order(0, "Mcdonalds", "American", "$", "4","OK");
+				 new Order(0, "Mcdonalds", "American", "$1", "$2" ,"$3", "4","OK");
 		
 		Order expected = //same as indb except the Order id is updated
-				 new Order(0, "Mcdonalds", "American", "$", "4","OK");
+				 new Order(0, "Mcdonalds", "American", "$1", "1", "2", "3", "OK");
 		//
 		given(orderRepository.findByRestaurantName("Mcdonalds")).willReturn
-		(new Order(0, "Mcdonalds", "American", "$", "4","OK"));
+		(new Order(0, "Mcdonalds", "American", "$1", "1", "2", "3", "OK"));
 		
 		given(orderRepository.save(indb)).willReturn(outdb);
 					
