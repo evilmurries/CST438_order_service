@@ -15,9 +15,12 @@
    <input type="hidden" th:value="*{restaurant.restaurantName}" th:name="orderName" />
    <input type="hidden" th:value="*{restaurant.cuisine}" th:name="cuisine" />
    <input type="hidden" th:value="*{restaurant.price}" th:name="price" />
-   <span th:inline="text"> [[${restaurant.foodItem1}]]: </span><input type="text" th:name="item1"/><br />
-   <span th:inline="text"> [[${restaurant.foodItem2}]]: </span><input type="text" th:name="item2"/><br />
-   <span th:inline="text"> [[${restaurant.foodItem3}]]: </span><input type="text" th:name="item3"/><br />
+   <input type="hidden" th:value="*{restaurant.foodItem1}" th:name="item1" />
+   <input type="hidden" th:value="*{restaurant.foodItem2}" th:name="item2" />
+   <input type="hidden" th:value="*{restaurant.foodItem3}" th:name="item3" />
+   <span th:inline="text"> [[${restaurant.foodItem1}]]: </span><input type="text" th:name="item1Count"/><br />
+   <span th:inline="text"> [[${restaurant.foodItem2}]]: </span><input type="text" th:name="item2Count"/><br />
+   <span th:inline="text"> [[${restaurant.foodItem3}]]: </span><input type="text" th:name="item3Count"/><br />
    <input type="submit" value="Submit" /> 
    </form>
 

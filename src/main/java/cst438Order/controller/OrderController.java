@@ -53,17 +53,22 @@ public class OrderController
    @PostMapping("/order/confirmed")
 	public String createReservation(
 			@RequestParam("orderName") String oName, 
-			@RequestParam("items") String items, 
 			@RequestParam("price") String price,
 			@RequestParam("cuisine") String cuisine,
+         @RequestParam("item1") String item1,
+         @RequestParam("item2") String item2,
+         @RequestParam("item3") String item3,
+			@RequestParam("item1Count") String item1Count,
+			@RequestParam("item2Count") String item2Count,
+			@RequestParam("item3Count") String item3Count,
 			Model model) {
-	   
+	   String items = item1 + " " + item2 + " " + item3;
 	   model.addAttribute("orderName", oName);
 	   model.addAttribute("items", items);
 	   model.addAttribute("price", price);
 	   model.addAttribute("cuisine", cuisine);
 
-		orderService.requestOrder(oName, cuisine, price, items);
+		orderService.requestOrder(oName, cuisine, price, items, item1Count, item2Count, item3Count);
 		return "Order_Confirmed";
 	}
  

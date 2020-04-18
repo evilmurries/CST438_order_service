@@ -35,7 +35,7 @@ public class OrderService {
 			ofOrder.setRestaurantName(restaurantName);
 			ofOrder.setCuisine(res.getCuisine());
 			ofOrder.setPrice(res.getPrice());
-			ofOrder.setItems(items);
+			//ofOrder.setItems(items);
 			
 			return ofOrder;
 		}
@@ -55,11 +55,18 @@ public class OrderService {
             String restaurantName, 
             String cuisine, 
             String price,
-            String items) {
+            String items,
+            String item1Count,
+            String item2Count,
+            String item3Count) {
 	String msg  = "{\"Name\": \""+ restaurantName + 
         "\" \"cuisine\": \""+cuisine+
         "\" \"price\": \""+price+
-        "\" \"items\": \""+items+"\"}" ;
+        "\" \"items\": \""+items+
+        "\" \"item1Count\": \"" +item1Count+
+        "\" \"item2Count\": \"" +item2Count+
+        "\" \"item3Count\": \"" +item3Count+
+        "\"}" ;
 	System.out.println("Sending message:"+msg);
 	rabbitTemplate.convertSendAndReceive(
          fanout.getName(), 
