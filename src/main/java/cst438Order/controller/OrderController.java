@@ -69,14 +69,16 @@ public class OrderController
 	   model.addAttribute("items", items);
 	   model.addAttribute("price", price);
 	   model.addAttribute("cuisine", cuisine);
-
+	   Order formOrder = new Order(oName, cuisine, price, item1, item2, item3, item1Count, item2Count, item3Count);
+	   model.addAttribute("formOrder", formOrder);
+ 		orderRepository.save(formOrder);
 		orderService.requestOrder(oName, cuisine, price, item1, item2, item3, item1Count, item2Count, item3Count);
 		return "Order_Confirmed";
 	}
  
    @PostMapping("/order/survey")
   	public String createSurvey(
-  			@RequestParam("level") String level, 	
+  			@RequestParam("level") String level, @Valid Order formOrder,	
   			Model model) {
   	   model.addAttribute("level", level);
   		orderService.requestSurvey(level);

@@ -10,7 +10,7 @@
 <div class="jumbotron">
     <h2>Order Confirmation.<h2>
     
-    <p th:inline="text">Your order from [[${orderName}]] will be
+    <p th:inline="text">Your order from [[${orderName}]] will be [[${price}]] [[${items}]]
     ready soon.</p>
     
      <h2>Please Click to take our survey!<h2>
@@ -27,6 +27,8 @@
       <label for="good">Bad</label><br />
    <input type="submit" value="Submit" th:name="level"/> 
    </form>
+   
+
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

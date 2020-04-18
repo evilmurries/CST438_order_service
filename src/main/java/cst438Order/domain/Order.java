@@ -31,10 +31,22 @@ public class Order {
    private String message;
    
    public Order() {
-	 		
+	   	this.id = 0;
+	      this.restaurantName = "name";
+	      this.cuisine = "cuisineType";
+	      this.price = "price";
+	      this.item1 = "item1";
+	      this.item2 = "item2";
+	      this.item3 = "item3";
+	      this.items = "item 1, 2 and 3";
+	      this.item1Count = "item1 count";
+	      this.item2Count = "item2 count";
+	      this.item3Count = "item 3 count";
+	      this.message = "simple message";
 	}
    
-   public Order(int i, String name, String cuisineType, String price, String item1, String item2, String item3, String message)
+   public Order(int i, String name, String cuisineType, String price, String item1, String item2, String item3,
+		   String item1Count, String item2Count, String item3Count, String message)
    {
       super();
       this.id = i;
@@ -44,9 +56,28 @@ public class Order {
       this.item1 = item1;
       this.item2 = item2;
       this.item3 = item3;
+      this.items = item1 +" "+ item2 +"  " + item3;
+      this.item1Count = item1Count;
+      this.item2Count = item2Count;
+      this.item3Count = item3Count;
       this.message = message;
    }
    
+   public Order(String name, String cuisineType, String price, String item1, String item2, String item3,
+		   String item1Count, String item2Count, String item3Count)
+   {
+      super();
+      this.restaurantName = name;
+      this.cuisine = cuisineType;
+      this.price = price;
+      this.item1 = item1;
+      this.item2 = item2;
+      this.item3 = item3;
+      this.items = item1 +" "+ item2 +"  " + item3;
+      this.item1Count = item1Count;
+      this.item2Count = item2Count;
+      this.item3Count = item3Count;
+   }
 
    @Override
    public String toString( ) {
