@@ -86,9 +86,15 @@ public class OrderService {
 	   String name = json.get("restaurantName").toString();
 	   String price = json.get("price").toString();
 	   String cuisine = json.get("cuisine").toString();
+	   String foodItem1 = json.get("foodItem1").toString();
+	   String foodItem2 = json.get("foodItem2").toString();
+	   String foodItem3 = json.get("foodItem3").toString();
 	   r.setRestaurantName(name);
 	   r.setPrice(price);
 	   r.setCuisine(cuisine);
+	   r.setFoodItem1(foodItem1);
+	   r.setFoodItem2(foodItem2);
+	   r.setFoodItem3(foodItem3);
 	   return r;
 	}
 }

@@ -10,7 +10,7 @@
    Restaurant Name: <span th:inline="text"> [[${restaurant.restaurantName}]]</span><br />
    Restaurant Cuisine: <span th:inline="text"> [[${restaurant.cuisine}]]</span><br />
    Total Price: <span th:inline="text"> [[${restaurant.price}]]</span><br />
-   Please Select Your Items Below
+   Please type in your quantities below.
    <form action="#" th:action="@{/order/confirmed}" method="post">
    <input type="hidden" th:value="*{restaurant.restaurantName}" th:name="orderName" />
    <input type="hidden" th:value="*{restaurant.cuisine}" th:name="cuisine" />

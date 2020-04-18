@@ -47,6 +47,7 @@ public class OrderController
           return "welcome";
        }
        model.addAttribute("restaurant", r);
+       System.out.println(r.toString());
        return "order";
    }
    
