@@ -66,7 +66,7 @@ public class OrderControllerTest
 
       // when
       MockHttpServletResponse response = mvc.perform(
-            get("api/order").contentType(MediaType.APPLICATION_JSON)
+            get("/order").contentType(MediaType.APPLICATION_JSON)
                .content(json.write(attempt).getJson()))
             .andReturn().getResponse();
 
@@ -85,7 +85,7 @@ public class OrderControllerTest
 
       // when
       MockHttpServletResponse response = mvc.perform(
-            post("api/order").contentType(MediaType.APPLICATION_JSON)
+            post("/order").contentType(MediaType.APPLICATION_JSON)
                .content(json.write(attempt).getJson()))
             .andReturn().getResponse();
 
@@ -104,7 +104,7 @@ public class OrderControllerTest
 
       // when
       MockHttpServletResponse response = mvc.perform(
-            post("api/order/confirmed").contentType(MediaType.APPLICATION_JSON)
+            post("/order/confirmed").contentType(MediaType.APPLICATION_JSON)
                .content(json.write(attempt).getJson()))
             .andReturn().getResponse();
 
