@@ -17,15 +17,15 @@
 
 	<p1>How was your experience?</p1>
  <form action="#" th:action="@{/order/survey}" method="post">
- 	  <input type="radio" th:value="luxury" th:name="level">
+ 	  <input type="radio" th:value="Good" th:name="level">
       <label for="luxury">Good</label><br />
       
-      <input type="radio" th:value="'very good'" th:name="level">
+      <input type="radio" th:value="Fair" th:name="level">
       <label for="very good">Fair</label><br />
       
-      <input type="radio" th:value="good" th:name="level">
+      <input type="radio" th:value="Bad" th:name="level">
       <label for="good">Bad</label><br />
-   <input type="submit" value="Submit" th:name="level"/> 
+   <input type="submit" value="Submit" th:name="submit"/> 
    </form>
    
 
