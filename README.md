@@ -2,7 +2,7 @@
 
 Libera is a food ordering service web application composed of dedicated 
 microservices. Order service is a frontend microservice that accesses restaurant
-metadata and saves the orders of users to an order database using an order table. 
+metadata and saves the orders of users to an orders database using an orders table. 
 
 It communicates using RabbitMq with a backend service.
 
@@ -14,6 +14,6 @@ It communicates using RabbitMq with a backend service.
 MySQL database username and password.
 
 * In the resources folder is a order.sql file. On each run this should
-automatically create a schema called 'order'.
-After completing your order, all orders will be saved in the 'order' schema 
+automatically create a schema called 'orders'.
+After completing your order, all orders will be saved in the 'orders' schema 
 in a table called 'orders'.
