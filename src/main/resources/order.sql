@@ -1,0 +1,2 @@
+DROP SCHEMA IF EXISTS order;
+CREATE SCHEMA order;
