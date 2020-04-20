@@ -86,8 +86,10 @@ public class OrderServiceTest {
 				new Order();
 		input.setRestaurantName("Mcdonalds");
 		input.setCuisine("American");
-		input.setPrice("$");
-		input.setItems("4");
+		input.setPrice("$1");
+		input.setItem1("taco");
+		input.setItem2("burrito");
+		input.setItem3("");
 		
 		Order indb =
 		 new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
@@ -99,7 +101,7 @@ public class OrderServiceTest {
 				 new Order(10, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
 		
 		given(orderRepository.findByRestaurantName("Mcdonalds")).willReturn(
-				new Order(1, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK"));		
+				new Order(1, "Mcdonalds", "American", "$1", "taco", "burrito","", "1", "2", "3", "OK"));		
 		
 		given(orderRepository.save(indb)).willReturn(outdb);
 		
@@ -121,21 +123,23 @@ public class OrderServiceTest {
 		input.setId(0);
 		input.setRestaurantName("Mcdonalds");
 		input.setCuisine("American");
-		input.setPrice("$");
-		input.setItems("4");
+		input.setPrice("$1");
+		input.setItem1("taco");
+		input.setItem2("burrito");
+		input.setItem3("");
 		
 		
 		Order indb =
-		 new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
-		
-		Order outdb = //same as indb except the Order id is updated
 				 new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
-		
-		Order expected = //same as indb except the Order id is updated
-				 new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
-		//
-		given(orderRepository.findByRestaurantName("Mcdonalds")).willReturn
-		(new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK"));
+				
+				Order outdb = //same as indb except the Order id is updated
+						 new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
+				
+				Order expected = //same as indb except the Order id is updated
+						 new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
+				//
+				given(orderRepository.findByRestaurantName("Mcdonalds")).willReturn
+				(new Order(0, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK"));
 		
 		given(orderRepository.save(indb)).willReturn(outdb);
 					

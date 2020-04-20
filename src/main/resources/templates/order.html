@@ -1,44 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<title>Restaurants</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-   integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-   crossorigin="anonymous"> </link>
-   
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Restaurant</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
 <body>
-<div class="container">
-<div class="jumbotron">
-   <h2>Restaurants</h2>
-
-
+<img src="../static/images/logo.jpg" class="centerpic" width="1000" th:src="@{images/logo.jpg}"/>
+ <div class="center">
+   <h2>Your Restaurant Choice</h2>
    Restaurant Name: <span th:inline="text"> [[${restaurant.restaurantName}]]</span><br />
    Restaurant Cuisine: <span th:inline="text"> [[${restaurant.cuisine}]]</span><br />
    Total Price: <span th:inline="text"> [[${restaurant.price}]]</span><br />
-   Please type in your quantities below.
+   Please type in your quantities below.<br><br>
+
+   
+    
    <form action="#" th:action="@{/order/confirmed}"  method="post">
    <input type="hidden" th:value="*{restaurant.restaurantName}" th:name="orderName" />
    <input type="hidden" th:value="*{restaurant.cuisine}" th:name="cuisine" />
    <input type="hidden" th:value="*{restaurant.price}" th:name="price" />
-   <input type="hidden" th:value="*{restaurant.foodItem1}" th:name="item1" />
+   <input type="hidden" th:value="*{restaurant.foodItem1}" th:name="item1" /> 
    <input type="hidden" th:value="*{restaurant.foodItem2}" th:name="item2" />
    <input type="hidden" th:value="*{restaurant.foodItem3}" th:name="item3" />
    <span th:inline="text"> [[${restaurant.foodItem1}]]: </span><input type="text" th:name="item1Count"/><br />
-   <span th:inline="text"> [[${restaurant.foodItem2}]]: </span><input type="text" th:name="item2Count"/><br />
-   <span th:inline="text"> [[${restaurant.foodItem3}]]: </span><input type="text" th:name="item3Count"/><br />
-   <input type="submit" value="Submit" /> 
+  <br> <span th:inline="text"> [[${restaurant.foodItem2}]]: </span><input type="text" th:name="item2Count"/><br />
+  <br> <span th:inline="text"> [[${restaurant.foodItem3}]]: </span><input type="text" th:name="item3Count"/><br />
+ <br>  <input type="submit" value="Submit" /> 
    </form>
 
 </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-crossorigin="anonymous"></script>
 </body>
 </html>
 
