@@ -50,19 +50,29 @@ public class OrderServiceTest {
 	@Test
 	public void getOrderTest() {
 		Order testOrder =
-				new Order(1, "Mcdonalds", "American", "$1", "taco", "burrito", "", "1", "2", "3", "OK");
+				new Order(1, "Mcdonalds", "American", "$", "fries", "burger", "", "1", "2", "3", "OK");
+				new Order(2, "Taco Bell", "Mexican", "$", "taco", "burrito", "", "1", "2", "3", "OK");
+				new Order(3, "Pizza Hut", "Italian", "$$", "Pizza", "Wings", "", "1", "2", "3", "OK");
 	
 	//mocked OrderRepository will return testOrder when findById(1)is called
 	given(orderRepository.findById(1)).willReturn(testOrder);
+	given(orderRepository.findById(2)).willReturn(testOrder);
+	given(orderRepository.findById(3)).willReturn(testOrder);
 	
 	//call the OrderService
 	Order actual = orderService.getOrder(1);
+	Order actual1 = orderService.getOrder(2);
+	Order actual2 = orderService.getOrder(3);
 	
 	//Verify the actual Order returned is correct
 	assertThat(actual).isEqualTo(testOrder);
 	assertThat(actual.getMessage()).isEqualTo("OK");
+	assertThat(actual1).isEqualTo(testOrder);
+	assertThat(actual1.getMessage()).isEqualTo("OK");
+	assertThat(actual2).isEqualTo(testOrder);
+	assertThat(actual2.getMessage()).isEqualTo("OK");
 	
-	}	
+	}		
 	@Test
 	public void deleteOrderTest() {
 		//given
