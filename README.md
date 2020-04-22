@@ -6,6 +6,12 @@ metadata and saves the orders of users to an orders database using an orders tab
 
 It communicates using RabbitMq with a backend service.
 
+Libera was developed by:
+
+Christopher Piwarski
+Mark Mariscal
+Wais Robleh
+
 ## Usage
 
 * The order microservice should be ran with both the restaurant and backend microservice.
