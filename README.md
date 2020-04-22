@@ -8,9 +8,10 @@ It communicates using RabbitMq with a backend service.
 
 Libera was developed by:
 
-Christopher Piwarski
-Mark Mariscal
-Wais Robleh
+* Christopher Piwarski
+* Mark Mariscal
+* Wais Robleh
+
 
 ## Usage
 
